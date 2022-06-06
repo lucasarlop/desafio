@@ -25,10 +25,19 @@ producer = KafkaProducer(
     value_serializer  = lambda x: dumps(x).encode('utf-8')
 )
 
-for n in range(10000):
-    data = {
-        'Número': n,
-        'Morse': morse_code(n)
-    }
-    producer.send('test-topic', value = data)
-    # sleep(1)
+# for n in range(10000):
+#     data = {
+#         'Número': n,
+#         'Morse': morse_code(n)
+#     }
+#     producer.send('test-topic', value = data, partition = 1)
+#     # sleep(1)
+
+while True:
+    for n in range(10000, 20000, 1):
+        data = {
+            'Número': n,
+            'Potência': n**n
+        }
+        producer.send('test-topic', value = data, partition = 0)
+        # sleep(1)
