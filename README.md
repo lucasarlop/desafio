@@ -7,7 +7,6 @@ Instalação do Java
 ## 2. Instalação do Kafka 2.7.0
 `wget https://archive.apache.org/dist/kafka/2.7.0/kafka-2.7.0-src.tgz`
 
-
 ## 3. Configuração do Zookeeper via Systemd do Linux
 `sudo vim /etc/systemd/system/zookeeper.service`
 
